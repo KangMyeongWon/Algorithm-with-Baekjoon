@@ -30,3 +30,21 @@
 
  <p>일곱 난쟁이의 키를 오름차순으로 출력한다. 일곱 난쟁이를 찾을 수 없는 경우는 없다.</p>
 
+
+ <p>
+numbers = [int(input()) for _ in range(9)]
+for i in range(len(numbers)):
+    a = numbers[i]
+    del numbers[i]
+    for j in range(len(numbers)):
+        b = numbers[j]
+        del numbers[j]
+        if sum(numbers) == 100:
+            numbers.sort()
+            for k in range(len(numbers)):
+                print(numbers[k])
+            exit()
+        else:
+            numbers.append(b)
+    numbers.append(a)</p>
+
